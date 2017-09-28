@@ -1558,6 +1558,36 @@
       return url;
     },
 
+
+    /**
+     * Creation of several objects
+     *
+     * @param {object[]} objectsArray - array of objects to be saved
+     * @returns {Promise<Number>} - Number of objects created
+     */
+    bulkCreate: promisified('_bulkCreate'),
+
+    /**
+     * Creation of several objects (sync)
+     *
+     * @param {object[]} objectsArray - array of objects to be saved
+     * @returns {Number} - Number of objects created
+     */
+    bulkCreateSync: synchronized('_bulkCreate'),
+
+    _bulkCreate: function(objectsArray, async) {
+      if (!Utils.isArray(objectsArray)) {
+        throw new Error('objectsArray argument should be an Array')
+      }
+
+      return Backendless._ajax({
+        method      : 'POST',
+        url         : this.bulkRestUrl,
+        isAsync     : !!async,
+        asyncHandler: async
+      });
+    },
+
     /**
      * Update of several objects by template
      *
