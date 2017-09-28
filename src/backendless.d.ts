@@ -428,6 +428,9 @@ declare module __Backendless {
         deleteRelationSync(parentObject:Object, columnName:string, childObjectIdArray:Array<string>):string;
         deleteRelationSync(parentObject:Object, columnName:string, whereClause:string):string;
 
+        bulkCreate(objectsArray:Array<Object>):Promise<Number>;
+        bulkCreateSync(objectsArray:Array<Object>):Number;
+
         bulkUpdate(templateObject:Object, whereClause:string):Promise<string>;
         bulkUpdateSync(templateObject:Object, whereClause:string):string;
 
