@@ -1593,7 +1593,7 @@
      *
      * @param {object} templateObject
      * @param {string} whereClause
-     * @returns {Promise}
+     * @returns {Promise<Number>} - Number of updated objects
      */
     bulkUpdate: promisified('_bulkUpdate'),
 
@@ -1602,11 +1602,11 @@
      *
      * @param {object} templateObject
      * @param {string} whereClause
-     * @returns {*}
+     * @returns {Number} - Number of updated objects
      */
     bulkUpdateSync: synchronized('_bulkUpdate'),
 
-    _bulkUpdate: function(templateObject, whereClause, async) {
+    _bulkUpdate: function(whereClause, templateObject, async) {
       this._validateBulkUpdateArgs(templateObject, whereClause);
 
       return Backendless._ajax({
@@ -1622,7 +1622,7 @@
      * Delete of several objects
      *
      * @param {(string|string[]|object[])} objectsArray - whereClause string or array of object ids or array of objects
-     * @returns {Promise}
+     * @returns {Promise<Number>} - Number of updated objects
      */
 
     bulkDelete: promisified('_bulkDelete'),
@@ -1631,7 +1631,7 @@
      * Delete of several objects (sync)
      *
      * @param {(string|string[]|object[])} objectsArray - whereClause string or array of object ids or array of objects
-     * @returns {*}
+     * @returns {Number} - Number of updated objects
      */
     bulkDeleteSync: synchronized('_bulkDelete'),
 

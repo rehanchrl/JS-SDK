@@ -431,11 +431,11 @@ declare module __Backendless {
         bulkCreate(objectsArray:Array<Object>):Promise<Number>;
         bulkCreateSync(objectsArray:Array<Object>):Number;
 
-        bulkUpdate(templateObject:Object, whereClause:string):Promise<string>;
-        bulkUpdateSync(templateObject:Object, whereClause:string):string;
+        bulkUpdate(whereClause:string, templateObject:Object):Promise<Number>;
+        bulkUpdateSync(whereClause:string, templateObject:Object):Number;
 
-        bulkDelete(objectsArray:string|Array<string>|Array<Object>):Promise<string>;
-        bulkDeleteSync(objectsArray:string|Array<string>|Array<Object>):string;
+        bulkDelete(objectsArray:string|Array<string>|Array<Object>):Promise<Number>;
+        bulkDeleteSync(objectsArray:string|Array<string>|Array<Object>):Number;
 
     }
 
