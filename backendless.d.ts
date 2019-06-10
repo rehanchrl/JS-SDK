@@ -704,7 +704,7 @@ declare module __Backendless {
 
         getPushTemplates(deviceType: string): Promise<Object>;
 
-        pushWithTemplate(templateName: string): Promise<Object>;
+        pushWithTemplate(templateName: string, templateValues?: Object): Promise<Object>;
     }
 
     /**

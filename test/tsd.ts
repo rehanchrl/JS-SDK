@@ -582,6 +582,7 @@ function testMessaging() {
     promiseObject = Backendless.Messaging.getPushTemplates('ios');
 
     promiseObject = Backendless.Messaging.pushWithTemplate('templateName');
+    promiseObject = Backendless.Messaging.pushWithTemplate('templateName', {foo: 'bar', num: 123});
 
 }
 
