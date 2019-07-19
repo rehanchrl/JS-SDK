@@ -1,6 +1,6 @@
 const LocalVars = {
   debugMode     : false,
-  serverURL     : 'http://api.backend.triplogic.io',
+  serverURL     : 'https://api.backend.triplogic.io',
   XMLHttpRequest: typeof XMLHttpRequest !== 'undefined' ? XMLHttpRequest : undefined,
   applicationId : null,
   secretKey     : null,
